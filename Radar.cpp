@@ -11,6 +11,20 @@ radar_s Radar;
 Vec2 Center;
 Vec2 RadarCenter;
 
+//struct player 
+//{
+//	BYTE hp;
+//	char name[32];
+//	BYTE team;
+//	float x;
+//	float y;
+//	float z;
+//	float pitch;
+//	float yaw;
+//	float roll;
+//} players[32] = { 0 };
+
+
 void radar_s::Init()
 {
 	Size = 160;
@@ -28,9 +42,9 @@ void radar_s::Show()
 	Draw.Line(Center.x - Radar.Size / 2, 50 + Radar.Size / 2, Center.x + Radar.Size / 2, 50 + Radar.Size / 2, 80, 80, 80, 255);
 	Draw.Line(Center.x, 50, Center.x, 50 + Radar.Size, 80, 80, 80, 255);
 	Draw.FilledBox(Center.x - 1, (50 + Radar.Size / 2) - 1, 2, 2, 50, 50, 50, 255);
-
-	sprintf_s(radarText, "%s", CBasePlayer.ZoneName);
-	Draw.ShadowText(radarText, Center.x - Draw.GetCenterPos(radarText) / 2, 50 + Radar.Size, 50, 200, 50, 255);
+	//
+	//sprintf_s(radarText, "%s", CBasePlayer.ZoneName);//Zone Name
+	//Draw.ShadowText(radarText, Center.x - Draw.GetCenterPos(radarText) / 2, 50 + Radar.Size, 50, 200, 50, 255);
 
 	if (GetAsyncKeyState(VK_F2))
 		exit(1);
@@ -51,10 +65,10 @@ void radar_s::Main()
 		RadarY = CBasePlayer.Origin.y - RadarArray[i].Origin.y;
 
 		char Tempo[256];
-		sprintf_s(Tempo, "%i", CBasePlayer.Health);
-		Draw.ShadowText(Tempo, 50, 50, 255, 0, 0, 255);
+		//sprintf_s(Tempo, "HP = %i", CBasePlayer.Health);//Health Player
+		//Draw.ShadowText(Tempo, 50, 50, 255, 0, 0, 255);
 
-		float Angle = CBasePlayer.Viewaxis.x / 180 * 3.141;
+		float Angle = CBasePlayer.Viewaxis.y /* .x *// 180 * 3.141;
 
 		float RotateX = RadarY * cos(Angle) - RadarX * sin(Angle);
 		float RotateY = RadarX * cos(Angle) + RadarY * sin(Angle);

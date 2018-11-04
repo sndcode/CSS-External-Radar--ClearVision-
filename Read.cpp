@@ -9,8 +9,8 @@ extern target_s Target;
 
 struct addr_s
 {
-	DWORD BasePlayer = 0x4D3904; //done
-	DWORD RadarBase = 0x5495B4; //done
+	DWORD BasePlayer = 0x4C6708; //0x4D3904; //done
+	DWORD RadarBase = 0x50C150; //done
 }Address;
 
 void read_s::AccessProcess()
