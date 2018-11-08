@@ -10,4 +10,4 @@ MODDED version uploaded.
 Some color changes and radar is now upper right corner.
 Also nametags re-added.
 
-https://imgproxy.high-minded.net/https://i.imgur.com/xDjtWz7.jpg
+https://i.imgur.com/xDjtWz7.jpg
