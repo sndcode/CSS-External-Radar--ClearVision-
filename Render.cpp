@@ -69,15 +69,21 @@ void render_s::ChangeMode()
 void render_s::Drawings()
 {
 	ChangeMode();
-	switch (Mode)
+	/*switch (Mode)
 	{
 	case 0:
-		String[0].Flash("- Enemy Mode -", Target.Size[0] / 2 - Draw.GetCenterPos("- Enemy Mode -") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
+		String[0].Flash("- 0", Target.Size[0] / 2 - Draw.GetCenterPos("- 0") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
 		break;
 	case 1:
-		String[1].Flash("- Team & Enemy Mode -", Target.Size[0] / 2 - Draw.GetCenterPos("- Team & Enemy Mode -") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
+		String[1].Flash("- 1", Target.Size[0] / 2 - Draw.GetCenterPos("- 1") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
 		break;
-	}
+	case 2:
+		String[1].Flash("- 2", Target.Size[0] / 2 - Draw.GetCenterPos("- 2") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
+		break;
+	case 3:
+		String[1].Flash("- 3", Target.Size[0] / 2 - Draw.GetCenterPos("- 3") / 2, Target.Size[1] - 150, 50, 200, 50, 1);
+		break;
+	}*/
 
 	Radar.Show();
 	WaterMark();
@@ -96,8 +102,8 @@ void render_s::WaterMark()
 		Frames = 0;
 	}
 
-	sprintf_s(waterMark_char, "Clear Vision - Radar 0.1", Frames_Char);
-	Draw.ShadowText(waterMark_char, Target.Size[0] / 2 - Draw.GetCenterPos(waterMark_char) / 2, 35, 255, 255, 255, 255);
+	sprintf_s(waterMark_char, "Clear Vision - MOD", Frames_Char);
+	Draw.ShadowText(waterMark_char, 10 , 10 , 255, 255, 255, 255);
 }
 
 

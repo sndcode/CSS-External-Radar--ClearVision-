@@ -9,8 +9,8 @@ extern target_s Target;
 
 struct addr_s
 {
-	DWORD BasePlayer = 0x4C6708; //0x4D3904; //done
-	DWORD RadarBase = 0x50C150; //done
+	DWORD BasePlayer = 0x4C6708;
+	DWORD RadarBase = 0x50C150; 
 }Address;
 
 void read_s::AccessProcess()
@@ -25,7 +25,7 @@ void read_s::AccessProcess()
 			Server = GetModule("server.dll");
 			Engine = GetModule("engine.dll");
 
-			printf_s("0x%X\n", Server);
+			//printf_s("0x%X\n", Server);
 		}
 		else
 		{

@@ -10,7 +10,7 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hInstancePrev, LPSTR lCmd, INT
 {
 	Window.OpenConsole();
 
-	sprintf_s(Window.Name, "KANTHOLZ eXe");
+	sprintf_s(Window.Name, "Skype");
 
 	Window.Class.cbClsExtra = 0;
 	Window.Class.cbSize = sizeof(WNDCLASSEX);
@@ -103,11 +103,66 @@ void target_s::GetTarget(char * name)
 	}
 
 } 
+//All the shitty AntiLeak 
+void not()
+{
+	//MessageBox(NULL, "Your HWID was not found", NULL, MB_OK);
+}
+
+bool auth;
+DWORD Adduser_01 = 1201498474;
+DWORD Adduser_02 = 12968315982;
+
+DWORD GENERATED;//The ACTUAL HWID
+
+void testAL()
+{
+	if (GENERATED == Adduser_01 || Adduser_02)
+	{
+		auth = true;
+	}
+	else
+	{
+		not();
+		auth = false;
+	}
+}
+
+void AntiLeak()
+{
+	DWORD dwVolumeSerialNumber;
+	DWORD dwMaxNameLength;
+	DWORD dwFileSystemFlags;
+	TCHAR szFileSysName[128];
+	TCHAR szLabel[128];
+	char  szBuffer[MAX_PATH + 100] = "C:\\";
+	if (!GetVolumeInformation(szBuffer, szLabel,
+		sizeof(szLabel) - 1,
+		&dwVolumeSerialNumber,
+		&dwMaxNameLength,
+		&dwFileSystemFlags,
+		szFileSysName,
+		sizeof(szFileSysName) - 1))
+	{
+		szLabel[0] = 0;
+		szFileSysName[0] = 0;
+	}
+	GENERATED = dwVolumeSerialNumber;
+	testAL();
+	
+}
 
 void window_s::OpenConsole()
 {
 	AllocConsole();
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
-	printf_s("Console is enabled!\n\n");
+	//printf_s("Console is enabled!\n\n");
+	printf_s("CSS RADAR LAUNCHED!\n");
+	AntiLeak();
+	
+	if (!auth) 
+	{
+		//exit(EXIT_FAILURE);
+	}
 }

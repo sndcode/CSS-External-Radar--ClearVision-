@@ -36,10 +36,10 @@ void directx_s::Initialize(HWND hWnd)
 
 	if (!lSprite)
 	{
-		D3DXCreateTextureFromFile(Device, "c:\\trollface.png", &lTexture);
+		/*D3DXCreateTextureFromFile(Device, "c:\\trollface.png", &lTexture);
 		D3DXCreateSprite(Device, &lSprite);
 		vPos.x = Target.Size[0] - 30.0f;
-		vPos.y = 1;
+		vPos.y = 1;*/
 	}
 }
 
